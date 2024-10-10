@@ -6,12 +6,12 @@ public class Fibonaci {
 
 
     public static void main(String[] args) {
-
-//        System.out.println(fib(n));
-//        System.out.println(ifib(n));
+ 
+//        System.out.println(fib(n));//tc:O( 2 of power n) sc:O(n)
+//        System.out.println(ifib(n));//tc:O(n) sc:O(1)
         // memoizations
         Arrays.fill(dp, -1);
-        System.out.println(mfib(n));
+        System.out.println(mfib(n));//tc:O(n) sc:O(n)
     }
     static int ifib(int n){
         if(n<=1)
