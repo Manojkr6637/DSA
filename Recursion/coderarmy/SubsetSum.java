@@ -2,14 +2,32 @@ package recursion;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1
 public class SubsetSum {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         ArrayList<Integer> temp = new ArrayList<>();
        // List<Integer> ans= subsetsrec(arr, 0, arr.length,temp);
-        List<Integer> ans= subsetsrec2(arr, 0, arr.length,0);
+        //List<Integer> ans= subsetsrec2(arr, 0, arr.length,0);
+        int target=6;
+        int []arrn={1,2,3};
+        boolean ans= subsetsSumTarget(arrn, 0, arrn.length,target);
         System.out.print(ans);
+    }
+    static boolean subsetsSumTarget(int []arr, int index, int n,int target){
+
+        if(target==0)
+            return true;
+
+        if(index==n || target<0){
+                return false;
+        }
+
+
+           return subsetsSumTarget(arr, index+1,n,target)|| subsetsSumTarget(arr, index+1,n,target-arr[index]);
+
+
+
     }
     static List<Integer> subsetsrec2(int []arr, int index, int n, int sum){
 
